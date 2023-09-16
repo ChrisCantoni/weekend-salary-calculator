@@ -37,11 +37,16 @@ function submitEmployee(event){
             <td>${idNumber}</td>
             <td>${title}</td>
             <td>$${salary}</td>
+            <td><button onClick="removeEmployee(event)">
+            Delete
+            </button></td>
         </tr>`
     console.log(totalMonthly);
     totalSalaryAmount.innerHTML = `${totalMonthly}`;
     console.log(employeeList);
 }
 
-
-
+function removeEmployee(event) {
+    console.log('remove employee', event.target.parentElement.parentElement);
+    event.target.parentElement.parentElement.remove();
+}
