@@ -1,9 +1,10 @@
 console.log('linked')
+console.log(employeeList);
 
 let employeeTable = document.querySelector('#employee-info');
 let totalSalary = 0;
 let totalSalaryAmount = document.querySelector('#total-salary');
-let employeeList = [];
+
 
 // Adds all employees to an array
 function addEmployee(firstName, lastName, idNumber, title, salary) {
@@ -17,7 +18,28 @@ function addEmployee(firstName, lastName, idNumber, title, salary) {
     employeeList.push(employeeToAdd);
     return employeeToAdd;
 }
+function addEmployeeList(array) {
+    for (let i = 0; i < array.length; i++) {
+        totalSalary += Number(array[i].salary);
+        employeeTable.innerHTML += `
+        <tr>
+                <td>${array[i].firstName}</td>
+                <td>${array[i].lastName}</td>
+                <td>${array[i].idNumber}</td>
+                <td>${array[i].title}</td>
+                <td>$${array[i].salary}</td>
+                <td><button onClick="removeEmployee(event)">
+                Delete
+                </button></td>
+            </tr>`
+        
+} 
+let totalMonthly = totalSalary / 12
+totalSalaryAmount.innerHTML = `${totalMonthly}`;
+}
 
+
+addEmployeeList(employeeList);
 // Takes in all info on employee, adds to DOM and array
 function submitEmployee(event){
     event.preventDefault();
@@ -28,7 +50,7 @@ function submitEmployee(event){
     let salary = Number(document.querySelector('#annual-salary').value);
     addEmployee(firstName, lastName, idNumber, title, salary);
     totalSalary = salary + totalSalary;
-    let totalMonthly = totalSalary / 12;
+    totalMonthly = totalSalary / 12;
     console.log(totalSalary);
     employeeTable.innerHTML +=`
         <tr>
