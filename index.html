@@ -8,9 +8,13 @@
     </head>
 <body>
     <h1>Salary Calculator</h1>
+    <h3>Add Employee</h3>
     <form onSubmit="submitEmployee(event)">
         <input type="text" placeholder="First name" id="first-name">
-        <input type="number" placeholder="Salary" id="annual-salary">
+        <input type="text" placeholder="Last name" id="last-name">
+        <input type="text" placeholder="ID" id="id-number">
+        <input type="text" placeholder="Title" id="job-title">
+        <input type="text" placeholder="Salary" id="annual-salary">
         <button>
             Submit
         </button>
@@ -19,6 +23,10 @@
         <thead>
             <tr>
                 <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
             </tr>
         </thead>
 
