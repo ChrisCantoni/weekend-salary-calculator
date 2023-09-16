@@ -10,10 +10,11 @@
     <h1>Salary Calculator</h1>
     <form onSubmit="submitEmployee(event)">
         <input type="text" placeholder="First name" id="first-name">
-        <input type="text" placeholder="Salary" id="annual-salary">
+        <input type="number" placeholder="Salary" id="annual-salary">
         <button>
             Submit
         </button>
+    </form>
     <table>
         <thead>
             <tr>
@@ -26,7 +27,7 @@
         </tbody>
     </table>
 
-    </form>
+    <h2 id="total-salary"></h2>
 
 </body>
 
