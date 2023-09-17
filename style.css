@@ -1,5 +1,7 @@
 h1 {
     background-color: green;
+    text-align: center;
+
 }
 
 table {
@@ -18,4 +20,22 @@ td, th {
 
 tr:nth-child(even){
     background-color:lightgrey;
+}
+
+form {
+    padding:0 2px 10px 2px;
+}
+
+input {
+    margin: 5px;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: right;
+    width: 80%;
 }

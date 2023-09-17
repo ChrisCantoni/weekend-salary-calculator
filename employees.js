@@ -1,28 +1,28 @@
 const employeeList = [
-    {firstName: 'Greg',
-    lastName: 'Butts',
-    idNumber: '555',
-    title: 'Supervisor',
+    {firstName: 'Evel',
+    lastName: 'Knievel',
+    idNumber: '665',
+    title: 'Test Pilot',
     salary: '50000'
 },
 {
-    firstName: 'Cindy',
+    firstName: 'Cyndi',
     lastName: 'Lauper',
-    idNumber: '700',
+    idNumber: '1983',
     title: 'Pop Star',
     salary: '82000'
 },
 {
     firstName: 'Robert',
     lastName: 'Smalls',
-    idNumber: '1864',
+    idNumber: '1839',
     title: 'Captain',
-    salary: '45000'
+    salary: '43970'
 },
 {
-    firstName: 'Mister',
+    firstName: 'Harland',
     lastName: 'Sanders',
-    idNumber: '4321',
+    idNumber: '11',
     title: 'Colonel',
     salary: '18500'
 }
