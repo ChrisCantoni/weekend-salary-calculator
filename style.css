@@ -1,11 +1,16 @@
-h1 {
-    background-color: green;
-    text-align: center;
 
+
+h1 {
+    color: white;
+    margin: 5px;
+
+    background-color: darkslateblue;
+    text-align: center;
 }
 
 table {
-    width: 80%;
+    width: 100%;
+    margin: 5px;
     border-collapse: collapse;
     border: 1px solid grey;
 }
@@ -23,6 +28,8 @@ tr:nth-child(even){
 }
 
 form {
+    margin: 5px;
+    background-color: beige;
     padding:0 2px 10px 2px;
 }
 
@@ -31,11 +38,23 @@ input {
 }
 
 h3 {
-    margin: 0;
+    background-color: beige;
+    margin: 5px;
     margin-bottom: 5px;
 }
 
 h2 {
+    margin: 5px;
+    color: white;
     text-align: right;
-    width: 80%;
+    background-color:darkslateblue;
 }
+
+.salary {
+    text-align: right;
+}
+
+.del-button {
+    text-align: center;
+}
+

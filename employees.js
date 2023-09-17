@@ -1,3 +1,5 @@
+// List of employees to pre-load for easier testing
+
 const employeeList = [
     {firstName: 'Evel',
     lastName: 'Knievel',
