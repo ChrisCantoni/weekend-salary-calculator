@@ -1,10 +1,8 @@
-console.log('linked')
-console.log(employeeList);
-
 let employeeTable = document.querySelector('#employee-info');
 let totalSalary = 0;
 let totalMonthly = 0;
 let totalSalaryAmount = document.querySelector('#total-salary');
+
 // Proper currency formatting found via freeCodeCamp
 let usDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
