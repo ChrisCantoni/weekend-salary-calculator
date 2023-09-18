@@ -69,12 +69,13 @@ function submitEmployee(event){
 function removeEmployee(event) {
     let removedEmployeeId = event.target.parentElement.parentElement.id;
     console.log(removedEmployeeId);
+    // Relying on the employeeList array rather than an array input feels like maybe its not good practice, 
+    // but since the array is a static element, I thought it made sense here
     for (let i = 0; i < employeeList.length; i++) {
         if (removedEmployeeId == employeeList[i].idNumber) {
             let removedEmployeeSalary = Number(employeeList[i].salary);
             removedEmployeeSalary = -Math.abs(removedEmployeeSalary);
             monthlySalary(removedEmployeeSalary);
-            console.log(removedEmployeeSalary);
         }
     }
     // Pop-up to confirm removal! Watch those eager fingers, boss
@@ -83,6 +84,7 @@ function removeEmployee(event) {
         }
 }
 
+// function to calculate monthly salary for both adding and removing employees
 function monthlySalary(employeeSalary) {
     totalSalary += employeeSalary;
     totalMonthly = totalSalary / 12

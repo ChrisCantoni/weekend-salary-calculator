@@ -13,9 +13,9 @@
     <form class="input-form" onSubmit="submitEmployee(event)">
         <input type="text" placeholder="First name" size="14" id="first-name">
         <input type="text" placeholder="Last name" size="14" id="last-name">
-        <input type="text" placeholder="ID" size="5" id="id-number">
+        <input type="text" placeholder="ID" size="5" min="0" id="id-number">
         <input type="text" placeholder="Title" size="18" id="job-title">
-        <input type="text" placeholder="Salary" size="8" id="annual-salary">
+        <input type="number" placeholder="Salary" size="8" min="0" id="annual-salary">
         <button>
             Submit
         </button>
