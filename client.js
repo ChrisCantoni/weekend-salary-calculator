@@ -79,21 +79,25 @@ function removeEmployee(event) {
     // have the same salary as someone else. Doesn't matter for subtracting salary, but it could matter in another scenario!
     let removedEmployeeId = event.target.parentElement.parentElement.id;
     let removedEmployeeName = event.target.parentElement.parentElement.cells[0].innerHTML + ' ' + event.target.parentElement.parentElement.cells[1].innerHTML;
-    // Using the employeeList array rather than an array input at the start of the function is maybe not good practice, 
-    // but since the array is a static element, I thought it made sense here.
-    for (let i = 0; i < employeeList.length; i++) {
-        if (removedEmployeeId == employeeList[i].idNumber) {
-            let removedEmployeeSalary = Number(employeeList[i].salary);
-            // Makes the salary a negative so the monthlySalary function works in both directions
-            removedEmployeeSalary = -Math.abs(removedEmployeeSalary);
-            monthlySalary(removedEmployeeSalary);
-        }
-    }
     // Pop-up to confirm removal! Watch those eager fingers, boss
     if (window.confirm('WARNING! Are you sure you want to delete this employee? This action cannot be undone.')) {
-        event.target.parentElement.parentElement.remove();
-        console.log(`${removedEmployeeName}, employee ${removedEmployeeId}, has been terminated.`);
+            // Using the employeeList array rather than an array input at the start of 
+            // the function is maybe not good practice, 
+            // but since the array is a static element, I thought it made sense here.
+        for (let i = 0; i < employeeList.length; i++) {
+            if (removedEmployeeId == employeeList[i].idNumber) {
+                let removedEmployeeSalary = Number(employeeList[i].salary);
+                // Removes employee from list of employees, ID Number can now be reused.
+                employeeList.splice([i], 1);
+                // Makes the salary a negative so the monthlySalary function works in both directions
+                removedEmployeeSalary = -Math.abs(removedEmployeeSalary);
+                monthlySalary(removedEmployeeSalary);
+            }
         }
+        event.target.parentElement.parentElement.remove();
+        console.log(employeeList);
+        console.log(`${removedEmployeeName}, employee ${removedEmployeeId}, has been terminated.`);
+    }
 }
 
 // function to calculate monthly salary for both adding and removing employees

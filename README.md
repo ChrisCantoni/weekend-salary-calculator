@@ -9,8 +9,9 @@ This project was assigned as a weekend challenge to build a page that could take
 
 The calculator required a form to collect an employee's first name, last name, ID, job title, and annual salary, submit that form and then append the submitted data in the DOM to an employee table below the form. The calculator also needed a way to remove each employee's entry from the table, as well as displaying the monthly salary and updating the monthly salary as employees were added or removed.
 
-I created a separate js file with an array of employees to pre-populate 
-I also added a confirmation window pop-up whenever an employee is selected for deletion.
+I created a separate .js file with an array of employees to pre-populate, primarily to make testing easier, but also for fun!
+
+I also added a confirmation window pop-up whenever an employee is selected for deletion, which felt like a necessary part of the UX for any employee removal program.
 
 
 ## Screen Shot
@@ -22,18 +23,9 @@ I also added a confirmation window pop-up whenever an employee is selected for d
 - Selectors, appending to the DOM, and event handling
 - HTML Forms
 
-## Installation
+## Steps
 
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
 
-If your application has secret keys (for example --  Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
-
-1. Create a database named `your database name`,
-2. The queries in the `tables.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries, 
-3. Open up your editor of choice and run an `npm install`
-4. Run `npm run server` in your terminal
-5. Run `npm run client` in your terminal
-6. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
 How does someone use this application? Tell a user story here.
