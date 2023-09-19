@@ -69,10 +69,14 @@ function submitEmployee(event){
             Delete
             </button></td>
         </tr>`
+        // Empties the input fields for next input
+        document.querySelector('#first-name').value = '';
+        document.querySelector('#last-name').value = '';
+        document.querySelector('#id-number').value = '';
+        document.querySelector('#job-title').value = '';
+        document.querySelector('#annual-salary').value = '';
     monthlySalary(salary);
     console.log(employeeList);
-    // Empties the input fields for next input
-    document.getElementById("#employee-form").reset();
         }
 
 
@@ -98,7 +102,7 @@ function removeEmployee(event) {
         }
         event.target.parentElement.parentElement.remove();
         console.log(employeeList);
-        console.log(`${removedEmployeeName}, employee ${removedEmployeeId}, has been terminated.`);
+        console.log(`${removedEmployeeName}, Employee ${removedEmployeeId}, has been terminated.`);
     }
 }
 
