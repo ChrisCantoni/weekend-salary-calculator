@@ -21,6 +21,7 @@ function addEmployee(firstName, lastName, idNumber, title, salary) {
     employeeList.push(employeeToAdd);
     return employeeToAdd;
 }
+
 // Function for populating the page with existing employee rolls for easier testing
 function addEmployeeList(array) {
     for (let i = 0; i < array.length; i++) {
@@ -32,7 +33,7 @@ function addEmployeeList(array) {
                 <td>${array[i].idNumber}</td>
                 <td>${array[i].title}</td>
                 <td class="salary">${usDollar.format(array[i].salary)}</td>
-                <td class="del-button"><button onClick="removeEmployee(event)">
+                <td><button onClick="removeEmployee(event)">
                 Delete
                 </button></td>
             </tr>`
@@ -42,7 +43,7 @@ function addEmployeeList(array) {
 // Adding the fake employees to the employeeList
 addEmployeeList(employeeList);
 
-// Takes in all info on employee, adds to DOM and array
+// Takes in all info on employee from the form fields, adds to DOM and array
 function submitEmployee(event){
     event.preventDefault();
     let firstName = document.querySelector('#first-name').value;
@@ -50,6 +51,12 @@ function submitEmployee(event){
     let idNumber = document.querySelector('#id-number').value;
     let title = document.querySelector('#job-title').value;
     let salary = Number(document.querySelector('#annual-salary').value);
+        // Check to ensure ID numbers are unique.
+        for (let i = 0; i < employeeList.length; i++) {
+            if (idNumber == employeeList[i].idNumber) {
+            alert('That ID number already exists. Please check your ID number.');
+            return;
+            }}
     addEmployee(firstName, lastName, idNumber, title, salary);
     employeeTable.innerHTML +=`
         <tr id="${idNumber}">
@@ -58,22 +65,26 @@ function submitEmployee(event){
             <td>${idNumber}</td>
             <td>${title}</td>
             <td class="salary">${usDollar.format(salary)}</td>
-            <td class="del-button"><button onClick="removeEmployee(event)">
+            <td><button onClick="removeEmployee(event)">
             Delete
             </button></td>
         </tr>`
     monthlySalary(salary);
     console.log(employeeList);
-}
+        }
+
 
 function removeEmployee(event) {
+    // Getting the id from the <tr> ensures that we get the correct employee even if they
+    // have the same salary as someone else. Doesn't matter for subtracting salary, but it could matter in another scenario!
     let removedEmployeeId = event.target.parentElement.parentElement.id;
-    console.log(removedEmployeeId);
-    // Relying on the employeeList array rather than an array input feels like maybe its not good practice, 
-    // but since the array is a static element, I thought it made sense here
+    let removedEmployeeName = event.target.parentElement.parentElement.cells[0].innerHTML + ' ' + event.target.parentElement.parentElement.cells[1].innerHTML;
+    // Using the employeeList array rather than an array input at the start of the function is maybe not good practice, 
+    // but since the array is a static element, I thought it made sense here.
     for (let i = 0; i < employeeList.length; i++) {
         if (removedEmployeeId == employeeList[i].idNumber) {
             let removedEmployeeSalary = Number(employeeList[i].salary);
+            // Makes the salary a negative so the monthlySalary function works in both directions
             removedEmployeeSalary = -Math.abs(removedEmployeeSalary);
             monthlySalary(removedEmployeeSalary);
         }
@@ -81,6 +92,7 @@ function removeEmployee(event) {
     // Pop-up to confirm removal! Watch those eager fingers, boss
     if (window.confirm('WARNING! Are you sure you want to delete this employee? This action cannot be undone.')) {
         event.target.parentElement.parentElement.remove();
+        console.log(`${removedEmployeeName}, employee ${removedEmployeeId}, has been terminated.`);
         }
 }
 
