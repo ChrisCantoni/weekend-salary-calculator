@@ -83,6 +83,7 @@ function submitEmployee(event){
 function removeEmployee(event) {
     // Getting the id from the <tr> ensures that we get the correct employee even if they
     // have the same salary as someone else. Doesn't matter for subtracting salary, but it could matter in another scenario!
+    // It also frees up the ID number to be reused.
     let removedEmployeeId = event.target.parentElement.parentElement.id;
     let removedEmployeeName = event.target.parentElement.parentElement.cells[0].innerHTML + ' ' + event.target.parentElement.parentElement.cells[1].innerHTML;
     // Pop-up to confirm removal! Watch those eager fingers, boss
@@ -100,6 +101,7 @@ function removeEmployee(event) {
                 monthlySalary(removedEmployeeSalary);
             }
         }
+        // Removes the entry in the table.
         event.target.parentElement.parentElement.remove();
         console.log(employeeList);
         console.log(`${removedEmployeeName}, Employee ${removedEmployeeId}, has been terminated.`);
