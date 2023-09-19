@@ -71,6 +71,8 @@ function submitEmployee(event){
         </tr>`
     monthlySalary(salary);
     console.log(employeeList);
+    // Empties the input fields for next input
+    document.getElementById("#employee-form").reset();
         }
 
 
