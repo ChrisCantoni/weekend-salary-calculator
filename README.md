@@ -7,7 +7,7 @@ Creating an application that records employee salaries and adds salaries up to r
 
 This project was assigned as a weekend challenge to build a page that could take in employee data and display it in a table, including the ability to both add and remove employees.
 
-The calculator required a form to collect an employee's first name, last name, ID, job title, and annual salary, submit that form and then append the submitted data in the DOM to an employee table below the form. The calculator also needed a way to remove each employee's entry from the table, as well as displaying the monthly salary and updating the monthly salary as employees were added or removed.
+The calculator required a form to collect an employee's first name, last name, ID, job title, and annual salary, submit that form and then append the submitted data in the DOM to an employee table below the form. The calculator also needed a way to remove each employee's entry from the table, as well as displaying the monthly salary and updating both the monthly salary and the list of employees as employees were added or removed.
 
 I created a separate .js file with an array of employees to pre-populate, primarily to make testing easier, but also for fun!
 
@@ -24,31 +24,34 @@ I also added a confirmation window pop-up whenever an employee is selected for d
 - HTML Forms
 
 ## Steps
+Steps taken to build this project:
 
-
-
-## Usage
-How does someone use this application? Tell a user story here.
-
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+- [ ] Add HTML form with onSubmit
+- [ ] Add an input for first name
+- [ ] Add a submit button
+- [ ] Create a function that appends the first name to the DOM
+- [ ] Add input for annual salary
+- [ ] Add salary to DOM
+- [ ] Update total monthly salary (annual divided by 12) on the DOM
+- [ ] Convert to HTML format - create a table for all the info
+- [ ] Add input for last name, ID, title
+- [ ] Add delete button
+- [ ] Add functionality to remove deleted employee from table
+- [ ] Subtract deleted employee's salary from total monthly calculation
+- [ ] Create an array of employees to preload as a sample
+- [ ] Add each submitted employee to said array
+- [ ] Have each employee removed from employee array upon deletion
+- [ ] Add pop-up confirmation when deleting an employee
 
 
 ## Built With
 
-List technologies and frameworks here
+Javascript
+HTML & CSS
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality, all the anonymous users at StackOverflow, and the very simple "How to format currency" guide at freeCodeCamp.
 
 ## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+If you have suggestions or issues, please email me at TBD.
