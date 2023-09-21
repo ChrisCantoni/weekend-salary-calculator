@@ -1,3 +1,4 @@
+const employeeList = require('../../employees.js');
 let employeeTable = document.querySelector('#employee-info');
 let totalSalary = 0;
 let totalMonthly = 0;
@@ -25,7 +26,7 @@ function addEmployee(firstName, lastName, idNumber, title, salary) {
 // Function for populating the page with existing employee rolls for easier testing
 function addEmployeeList(array) {
     for (let i = 0; i < array.length; i++) {
-        monthlySalary(Number(array[i].salary));
+        monthlySalary(array[i].salary);
         employeeTable.innerHTML += `
         <tr id="${array[i].idNumber}" data-value="${array[i].salary}">
                 <td>${array[i].firstName}</td>
@@ -76,7 +77,7 @@ function submitEmployee(event){
         document.querySelector('#job-title').value = '';
         document.querySelector('#annual-salary').value = '';
     monthlySalary(salary);
-    console.log(employeeList);
+    console.table(employeeList);
         }
 
 
@@ -103,8 +104,8 @@ function removeEmployee(event) {
         }
         // Removes the entry in the table.
         event.target.parentElement.parentElement.remove();
-        console.log(employeeList);
         console.log(`${removedEmployeeName}, Employee ${removedEmployeeId}, has been terminated.`);
+        console.table(employeeList);
     }
 }
 
