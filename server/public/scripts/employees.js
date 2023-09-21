@@ -31,4 +31,4 @@ const employeeList = [
 ]
 
 // Move to Server instead of public
-module.exports = employeeList;
+// module.exports = employeeList;

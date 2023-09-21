@@ -1,4 +1,5 @@
-const employeeList = require('../../employees.js');
+console.log('Client is running');
+// const employeeList = require('../../employees.js');
 let employeeTable = document.querySelector('#employee-info');
 let totalSalary = 0;
 let totalMonthly = 0;
