@@ -1,5 +1,4 @@
 console.log('Client is running');
-// const employeeList = require('../../employees.js');
 let employeeTable = document.querySelector('#employee-info');
 let totalSalary = 0;
 let totalMonthly = 0;
@@ -45,7 +44,7 @@ function addEmployeeList(array) {
 // Adding the fake employees to the employeeList
 addEmployeeList(employeeList);
 
-// Takes in all info on employee from the form fields, adds to DOM and array
+// Takes in all info on employee from the form fields, adds to DOM and employeeList array
 function submitEmployee(event){
     event.preventDefault();
     let firstName = document.querySelector('#first-name').value;
@@ -103,14 +102,14 @@ function removeEmployee(event) {
                 monthlySalary(removedEmployeeSalary);
             }
         }
-        // Removes the entry in the table.
+        // Removes the entry in the DOM table.
         event.target.parentElement.parentElement.remove();
         console.log(`${removedEmployeeName}, Employee ${removedEmployeeId}, has been terminated.`);
-        console.table(employeeList);
+        console.table(employeeList); // Updated list so we know everything is working as intended
     }
 }
 
-// function to calculate monthly salary for both adding and removing employees
+// Function to calculate monthly salary for both adding and removing employees
 function monthlySalary(employeeSalary) {
     totalSalary += employeeSalary;
     totalMonthly = totalSalary / 12

@@ -1,4 +1,5 @@
 // List of employees to pre-load for easier testing
+console.log('Employee table loaded');
 
 const employeeList = [
     {firstName: 'Evel',

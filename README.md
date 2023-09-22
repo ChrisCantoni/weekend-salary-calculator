@@ -1,6 +1,6 @@
 # Javascript Salary Calculator - Prime weekend challenge
 
-Creating an application that records employee salaries and adds salaries up to report monthly costs.
+Creating an application that records and displays employee salaries and adds salaries up to report monthly costs.
 
 
 ## Description
@@ -23,7 +23,7 @@ I also added a confirmation window pop-up whenever an employee is selected for d
 - Selectors, appending to the DOM, and event handling
 - HTML Forms
 
-## Steps
+### Steps
 Steps taken to build this project:
 
 - [ ] Add HTML form with onSubmit
@@ -42,11 +42,13 @@ Steps taken to build this project:
 - [ ] Add each submitted employee to said array
 - [ ] Have each employee removed from employee array upon deletion
 - [ ] Add pop-up confirmation when deleting an employee
+- [ ] Add express and server.js for further practice with servers
 
 
-## Built With
+### Built With
 
 Javascript
+
 HTML & CSS
 
 
